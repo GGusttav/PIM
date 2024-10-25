@@ -1,0 +1,68 @@
+﻿using System.Security.Cryptography;
+
+class Program
+{
+
+    public static void Main(string[] args)
+{
+        C1 minhaClasse1 = new C1();
+
+        while (true)
+    {
+        Console.WriteLine("0 – sair do programa");
+        Console.WriteLine("1 – atribuir valor ao numero1");
+        Console.WriteLine("2 – atribuir valor ao numero2");
+        Console.WriteLine("3 – retornar os valores dos dois números");
+        Console.WriteLine("4 – retornar a soma");
+        Console.WriteLine("5 – retornar a subtração");
+        Console.WriteLine("6 – retornar a multiplicação");
+        Console.WriteLine("7 – retornar a divisão");
+        Console.WriteLine("Informe sua opção -> ");
+
+        int opc = Convert.ToInt32(Console.ReadLine());
+
+        if (opc == 0)
+        {
+            break;
+        }
+        else if (opc == 1)
+        {
+            Console.WriteLine("Informe o valor para numero1:");
+            minhaClasse1.Numero1 = Convert.ToSingle(Console.ReadLine());
+        }
+        else if (opc == 2)
+        {
+            Console.WriteLine("Informe o valor para numero2:");
+            minhaClasse1.Numero2 = Convert.ToSingle(Console.ReadLine());
+        }
+        else if (opc == 3)
+        {
+            Console.WriteLine($"numero1: {minhaClasse1.Numero1}, numero2: {minhaClasse1.Numero2}");
+        }
+        else if (opc == 4)
+        {
+            Console.WriteLine($"Soma: {minhaClasse1.Soma()}");
+        }
+        else if (opc == 5)
+        {
+            Console.WriteLine($"Subtração: {minhaClasse1.Subtracao()}");
+        }
+        else if (opc == 6)
+        {
+            Console.WriteLine($"Multiplicação: {minhaClasse1.Multiplicacao()}");
+        }
+        else if (opc == 7)
+        {
+            try
+            {
+                Console.WriteLine($"Divisão: {minhaClasse1.Divisao()}");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Erro: Divisão por zero.");
+            }
+        }
+    }
+}
+
+}
